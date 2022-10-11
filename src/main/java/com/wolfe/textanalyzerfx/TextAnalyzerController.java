@@ -20,7 +20,7 @@ public class TextAnalyzerController implements Initializable{
     @FXML
     private TableColumn<Words, Integer> count;
     Map<String, Integer> topTwentyWords = TextAnalyzerFX.sortWords(TextAnalyzerFX.parseText());
-    private final ArrayList<Words> wordsArrayList = new ArrayList<>(TextAnalyzerFX.createWords(topTwentyWords));
+    private final ArrayList<Words> wordsArrayList = new ArrayList<>(TextAnalyzerFX.createWordObjects(topTwentyWords));
 
     public TextAnalyzerController() throws FileNotFoundException {
     }

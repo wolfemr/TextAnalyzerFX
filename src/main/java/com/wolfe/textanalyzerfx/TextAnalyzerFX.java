@@ -14,16 +14,11 @@ public class TextAnalyzerFX {
 
     public static HashMap<String, Integer> parseText() throws FileNotFoundException {
 
-            // create hash map to hold strings plus their count
-            HashMap<String, Integer> wordCount = new HashMap<>();
-
-            // create ArrayList to hold individual words
-            ArrayList<String> words = new ArrayList<>();
-
-            // read file to Scanner object
-            Scanner fileScanner = new Scanner(new FileReader
+            HashMap<String, Integer> wordCount = new HashMap<>(); // create hash map to hold strings plus their count
+            ArrayList<String> words = new ArrayList<>(); // create ArrayList to hold individual words
+            Scanner fileScanner = new Scanner(new FileReader // read file to Scanner object
                     ("src/main/java/com/wolfe/textanalyzerfx/" +
-                            "The Project Gutenberg eBook of The Raven, by Edgar Allan Poe.htm"));
+                    "The Project Gutenberg eBook of The Raven, by Edgar Allan Poe.htm"));
 
             Words wordObject = new Words();
 
@@ -58,15 +53,15 @@ public class TextAnalyzerFX {
             return wordCount;
     }
 
-    public static ArrayList<Words> createWords(Map<String, Integer> wordList) {
+    public static ArrayList<Words> createWordObjects(Map<String, Integer> wordList) {
 
-        ArrayList<Words> sortedWords = new ArrayList<>();
+        ArrayList<Words> wordObjects = new ArrayList<>();
 
         for (Map.Entry<String, Integer> entry : wordList.entrySet()) {
             Words word = new Words(entry.getKey(), entry.getValue());
-            sortedWords.add(word);
+            wordObjects.add(word);
         }
-        return sortedWords;
+        return wordObjects;
     }
 
     // sort wordCount entries by value to new map
