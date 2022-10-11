@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 public class Main extends Application {
 
     @Override // method to create the stage
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         try {
             FXMLLoader root = new FXMLLoader(Main.class.getResource("Main.fxml"));
             Scene scene = new Scene(root.load());

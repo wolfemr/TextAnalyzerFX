@@ -20,8 +20,6 @@ public class TextAnalyzerFX {
                     ("src/main/java/com/wolfe/textanalyzerfx/" +
                     "The Project Gutenberg eBook of The Raven, by Edgar Allan Poe.htm"));
 
-            Words wordObject = new Words();
-
             // parse the file line by line
             while (fileScanner.hasNextLine()) {
 
