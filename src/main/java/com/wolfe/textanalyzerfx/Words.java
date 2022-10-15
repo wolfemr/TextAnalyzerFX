@@ -21,32 +21,29 @@ public class Words {
         setCount(count);
     }
 
-    public SimpleStringProperty wordProperty() {
-        return word;
-    }
-
     public String getWord() {
+
         return word.get();
     }
 
     public void setWord(String word) {
+
         this.word.set(word);
     }
 
-    public SimpleIntegerProperty countProperty() {
-        return count;
-    }
-
     public int getCount() {
+
         return count.get();
     }
 
     public void setCount(int count) {
+
         this.count.set(count);
     }
 
     @Override
     public String toString() {
+
         return ("word=" + word + ", count=" + count + ", list=" + list);
     }
 }

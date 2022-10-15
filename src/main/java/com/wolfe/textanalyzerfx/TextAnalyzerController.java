@@ -35,5 +35,6 @@ public class TextAnalyzerController implements Initializable{
         word.setCellValueFactory(new PropertyValueFactory<Words, String>("word"));
         count.setCellValueFactory(new PropertyValueFactory<Words, Integer>("count"));
         table.setItems(list);
+
     }
 }
