@@ -19,17 +19,24 @@ public class TextAnalyzerController implements Initializable{
     private TableColumn<Words, String> word;
     @FXML
     private TableColumn<Words, Integer> count;
+
+    // create Map of top twenty words by calling sortWords() with output of parseText()
     Map<String, Integer> topTwentyWords = TextAnalyzerFX.sortWords(TextAnalyzerFX.parseText());
+
+    // create ArrayList from Map for use with ObservableList JavaFX functionality
     private final ArrayList<Words> wordsArrayList = new ArrayList<>(TextAnalyzerFX.createWordObjects(topTwentyWords));
 
     public TextAnalyzerController() throws FileNotFoundException {
     }
+
+    // create ObservableList for use with JavaFX TableView
     ObservableList<Words> list = FXCollections.observableArrayList(wordsArrayList);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
+    // populate TableView with ObservableList object
     @FXML
     public void showTable(ActionEvent event) {
         word.setCellValueFactory(new PropertyValueFactory<Words, String>("word"));
