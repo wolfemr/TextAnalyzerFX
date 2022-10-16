@@ -9,6 +9,7 @@ class WordsTest {
 
     @Test
     void getWord() {
+
         assertEquals("test", testWord.getWord());
     }
 
@@ -16,6 +17,18 @@ class WordsTest {
     void getCount() {
 
         assertEquals(99, testWord.getCount());
+    }
+
+    @Test
+    void changeCount() {
+        testWord.setCount(88);
+        assertEquals(88, testWord.getCount());
+    }
+
+    @Test
+    void changeWord() {
+        testWord.setWord("test1");
+        assertEquals("test1", testWord.getWord());
     }
 
 }
