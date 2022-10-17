@@ -14,7 +14,7 @@ public class TextAnalyzerFX {
 
     public static HashMap<String, Integer> parseText() throws FileNotFoundException {
 
-            HashMap<String, Integer> wordCount = new HashMap<>(); // create hash map to hold strings plus their count
+            HashMap<String, Integer> wordsWithCounts = new HashMap<>(); // create hash map to hold strings plus their count
             ArrayList<String> words = new ArrayList<>(); // create ArrayList to hold individual words
             Scanner fileScanner = new Scanner(new FileReader // read file to Scanner object
                     ("src/main/java/com/wolfe/textanalyzerfx/" +
@@ -46,9 +46,9 @@ public class TextAnalyzerFX {
             // add contents of wordsArray to wordCount hashmap
             // increment values for each word
             for (int i = 258; i <= 1349; i++) {
-                wordCount.put(wordsArray[i], wordCount.getOrDefault(wordsArray[i], 0) + 1);
+                wordsWithCounts.put(wordsArray[i], wordsWithCounts.getOrDefault(wordsArray[i], 0) + 1);
             }
-            return wordCount;
+            return wordsWithCounts;
     }
 
     public static ArrayList<Words> createWordObjects(Map<String, Integer> wordList) {
