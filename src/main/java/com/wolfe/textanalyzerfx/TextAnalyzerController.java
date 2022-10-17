@@ -39,8 +39,8 @@ public class TextAnalyzerController implements Initializable{
     // populate TableView with ObservableList object
     @FXML
     public void showTable(ActionEvent event) {
-        word.setCellValueFactory(new PropertyValueFactory<Words, String>("word"));
-        count.setCellValueFactory(new PropertyValueFactory<Words, Integer>("count"));
+        word.setCellValueFactory(new PropertyValueFactory<>("word"));
+        count.setCellValueFactory(new PropertyValueFactory<>("count"));
         table.setItems(list);
 
     }
