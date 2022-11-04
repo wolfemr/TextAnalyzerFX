@@ -5,6 +5,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * Basic class for handling Words objects, which are comprised of a word(String) and
+ * a count of the word's occurrence(int)
+ *
+ * @author Wolfe
+ */
+
 public class Words {
     private final SimpleStringProperty word;
     private final SimpleIntegerProperty count;

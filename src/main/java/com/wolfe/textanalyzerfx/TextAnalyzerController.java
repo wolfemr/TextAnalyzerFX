@@ -12,6 +12,13 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.*;
 
+/**
+ * TextAnalyzerController contains the logic for generating the JavaFX
+ * implementation for the TextAnalyzerFX application.
+ *
+ * @author Wolfe
+ */
+
 public class TextAnalyzerController implements Initializable{
     @FXML
     private TableView<Words> table;

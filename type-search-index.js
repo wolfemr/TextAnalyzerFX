@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.wolfe.textanalyzerfx","l":"Main"},{"p":"com.wolfe.textanalyzerfx","l":"TextAnalyzerController"},{"p":"com.wolfe.textanalyzerfx","l":"TextAnalyzerFX"},{"p":"com.wolfe.textanalyzerfx","l":"Words"}];updateSearchResults();

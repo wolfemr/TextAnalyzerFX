@@ -6,6 +6,14 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test implementation for the TextAnalyzerFX class by verifying
+ * that the sortWords method can accurately sort the entries present in
+ * a provided HashMap.
+ *
+ * @author Wolfe
+ */
+
 class TextAnalyzerFXTest {
 
     // create HashMap to test sortWords method of TextAnalyzerFX.java

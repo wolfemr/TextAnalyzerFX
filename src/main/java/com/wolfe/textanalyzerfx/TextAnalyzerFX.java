@@ -10,8 +10,29 @@ import java.io.FileReader;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Contains the logic for parsing a text file to ultimately determine
+ * the top 20 most frequently occurring words in the text file.
+ *
+ * @author Michael Wolfe
+ */
+
 public class TextAnalyzerFX {
 
+    /**
+     * Parses through a text file to remove and format the following:
+     *<ul>
+     *    <li>Remove all HTML tags</li>
+     *    <li>Remove punctuation marks, including em-dashes and curly quotes</li>
+     *    <li>Sets all letters to lowercase</li>
+     *    <li>Splits all words at the space character</li>
+     *    <li>Removes all singleton lines</li>
+     *</ul>
+     *Parsed words are then added to a HashMap, incrementing their occurrence as they are added.
+     *
+     * @return wordObjects HashMap&lt;String, Integer&gt;
+     * @throws FileNotFoundException if file is missing
+     */
     public static HashMap<String, Integer> parseText() throws FileNotFoundException {
 
             HashMap<String, Integer> wordsWithCounts = new HashMap<>(); // create hash map to hold strings plus their count
@@ -51,6 +72,12 @@ public class TextAnalyzerFX {
             return wordsWithCounts;
     }
 
+    /**
+     * Creates Words objects from provided Map and returns an ArrayList of the objects.
+     *
+     * @param wordList Map&lt;String, Integer&gt;
+     * @return wordObjects ArrayList of type Words
+     */
     public static ArrayList<Words> createWordObjects(Map<String, Integer> wordList) {
 
         ArrayList<Words> wordObjects = new ArrayList<>();
@@ -62,7 +89,12 @@ public class TextAnalyzerFX {
         return wordObjects;
     }
 
-    // sort wordCount entries by value to new map
+    /**
+     * Sorts the provided words by value and limits the returned amount by the specified limit.
+     *
+     * @param wordCount&lt;String, Integer&gt;
+     * @return sorted HashMap
+     */
     public static Map<String, Integer> sortWords(HashMap<String, Integer> wordCount) {
         return wordCount.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))

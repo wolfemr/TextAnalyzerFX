@@ -1,4 +1,4 @@
-module com.example.textanalyzerfx {
+module com.wolfe.textanalyzerfx {
     requires javafx.controls;
     requires javafx.fxml;
 
