@@ -4,6 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test implementation for the Words class for verifying that constructors, setters, and getters
+ * are working as expected
+ *
+ * @author Wolfe
+ */
 class WordsTest {
 
     // create object to be used for testing
