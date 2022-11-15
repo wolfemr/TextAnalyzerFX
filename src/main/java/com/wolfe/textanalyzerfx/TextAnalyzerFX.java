@@ -7,6 +7,7 @@ package com.wolfe.textanalyzerfx;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.sql.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -101,5 +102,44 @@ public class TextAnalyzerFX {
                 .limit(20).collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue, (value1, value2) -> value1, LinkedHashMap::new));
+    }
+
+    /**
+     * Method addToDatabase adds the contents of the wordCount parameter to an established database.
+     *
+     * The method deletes and replaces the rows of the database when called to ensure the database does not
+     * grow unnecessarily.
+     *
+     * @param wordCount
+     * @author Michael Wolfe
+     */
+
+    public static void addToDatabase(Map<String, Integer> wordCount) {
+
+        // create connection to database driver
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/word_occurrences", "root", "1234");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from word");
+
+            // delete existing rows in database
+            for (int i = 1; i <=20; i++) {
+                statement.executeUpdate("DELETE FROM `word_occurrences`.`word` WHERE (`word_id` = '"+i+"')");
+            }
+
+            int rowID = 0;
+
+            // add contents of Map to database
+            for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+
+                rowID += 1;
+
+                String query = "INSERT INTO word(word_id, word, occurrence) VALUES('"+rowID+"', '"+entry.getKey()+"', '"+entry.getValue()+"')";
+                statement.executeUpdate(query);
+            }
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }

@@ -36,8 +36,9 @@ public class TextAnalyzerController implements Initializable{
     public TextAnalyzerController() throws FileNotFoundException {
     }
 
-    // create ObservableList for use with JavaFX TableView
-    ObservableList<Words> list = FXCollections.observableArrayList(wordsArrayList);
+    // create ObservableList for use with JavaFX TableView - DEPRECATED FOR JDBC/MYSQL INTEGRATION
+    //ObservableList<Words> list = FXCollections.observableArrayList(wordsArrayList);
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -48,7 +49,7 @@ public class TextAnalyzerController implements Initializable{
     public void showTable(ActionEvent event) {
         word.setCellValueFactory(new PropertyValueFactory<>("word"));
         count.setCellValueFactory(new PropertyValueFactory<>("count"));
-        table.setItems(list);
+        table.setItems(Main.getObservableList());
 
     }
 }
