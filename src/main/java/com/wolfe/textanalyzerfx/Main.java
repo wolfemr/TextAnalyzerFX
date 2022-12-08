@@ -43,10 +43,10 @@ public class Main extends Application {
             ResultSet resultSet = statement.executeQuery("select * from word");
 
             // Populate the list with the resultSet from the db query
-            System.out.println("Word - Occurrence");
+
             while (resultSet.next()) {
                 list.add(new Words(resultSet.getString("word"), resultSet.getInt("occurrence")));
-                System.out.println(resultSet.getString("word")+ " " + resultSet.getInt("occurrence"));
+
             }
 
         } catch (Exception e) {

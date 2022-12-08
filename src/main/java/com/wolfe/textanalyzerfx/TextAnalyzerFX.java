@@ -36,11 +36,12 @@ public class TextAnalyzerFX {
      */
     public static HashMap<String, Integer> parseText() throws FileNotFoundException {
 
+            // htm file must be in directory it output jar. Path must be changed to src\main\java\com\wolfe\textanalyzerfx
+            // if running from IDE
             HashMap<String, Integer> wordsWithCounts = new HashMap<>(); // create hash map to hold strings plus their count
             ArrayList<String> words = new ArrayList<>(); // create ArrayList to hold individual words
             Scanner fileScanner = new Scanner(new FileReader // read file to Scanner object
-                    ("src/main/java/com/wolfe/textanalyzerfx/" +
-                    "The Project Gutenberg eBook of The Raven, by Edgar Allan Poe.htm"));
+                    ("The Project Gutenberg eBook of The Raven, by Edgar Allan Poe.htm"));
 
             // parse the file line by line
             while (fileScanner.hasNextLine()) {
